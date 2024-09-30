@@ -1,1 +1,1 @@
-# synth_data_project
+# Synthetic Data Generator and Missing Values imputation

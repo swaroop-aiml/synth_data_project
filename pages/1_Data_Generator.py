@@ -68,6 +68,15 @@ def generate_synthetic_data(data, selected_model, num_samples):
 # Main function
 def main():
     st.header("Synthetic Data Generator")
+    st.write("""
+    This section allows you to:
+    - **Train Model**: Train model using sample data.
+    - **Generate Synthetic Data**: Trained model is used to generate synthetic data.
+    - **Evaluate Data Quality**: Data Quality is evaluated using the synthetic data.
+    - **Compare Distributions**: Actual data distribution is compared with synthetic data distribution.
+
+    Use the sidebar to navigate between different sections of the app.
+    """)
 
     with st.sidebar:
         uploaded_file = st.file_uploader("Upload your CSV or Excel file", type=["csv", "xlsx", "xls"])

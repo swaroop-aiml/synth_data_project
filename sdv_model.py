@@ -20,17 +20,17 @@ real_data = pd.read_csv('data/bank-full.csv', delimiter=',')
 metadata = SingleTableMetadata()
 metadata.detect_from_dataframe(real_data)
 
-synthesizer = GaussianCopulaSynthesizer(metadata)
+synthesizer = GaussianCopulaSynthesizer(metadata, cuda=False)
 synthesizer.fit(data=real_data)
 synthesizer.save('./model/copula_synthesizer.pkl')
 
 
-synthesizer_2 = TVAESynthesizer(metadata)
+synthesizer_2 = TVAESynthesizer(metadata, cuda=False)
 synthesizer_2.fit(data=real_data)
 synthesizer_2.save('./model/tvae_synthesizer.pkl')
 
 
-synthesizer_1 = CTGANSynthesizer(metadata)
+synthesizer_1 = CTGANSynthesizer(metadata, cuda=False)
 synthesizer_1.fit(data=real_data)
 synthesizer_1.save('./model/ctgan_synthesizer.pkl')
 
